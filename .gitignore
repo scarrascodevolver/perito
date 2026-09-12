@@ -1,0 +1,17 @@
+# Copia de la web antigua (fotos y logos, no va al repo público)
+backup-sitio-actual/
+# Laravel
+laravel/vendor/
+laravel/node_modules/
+laravel/.env
+laravel/storage/*.key
+laravel/storage/logs/*
+laravel/storage/framework/cache/data/*
+laravel/storage/framework/sessions/*
+laravel/storage/framework/views/*
+laravel/public/hot
+laravel/public/storage
+laravel/.phpunit.result.cache
+laravel/.phpunit.cache
+*.log
+.DS_Store

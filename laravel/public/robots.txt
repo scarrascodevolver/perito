@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://peritoeconomico.es/sitemap.xml
