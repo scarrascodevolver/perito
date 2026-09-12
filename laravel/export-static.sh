@@ -25,7 +25,7 @@ for r in $RUTAS; do
 import sys,re
 s=sys.stdin.read(); base='$BASE'
 s=s.replace('http://localhost:$PORT', base)                       # asset() y route() absolutos
-s=s.replace('href="'+base+'"', 'href="'+base+'/"')             # portada con barra final
+s=s.replace('href=\"'+base+'\"', 'href=\"'+base+'/\"')             # portada con barra final
 s=re.sub(r'href=\"/perito-economico-', 'href=\"'+base+'/perito-economico-', s)  # enlace JS geolocalización
 # Formulario: en la demo no hay servidor, se avisa al pulsar enviar
 s=re.sub(r'<form class=\"f\" action=\"[^\"]*\" method=\"POST\"', '<form class=\"f\" action=\"#\" method=\"GET\" onsubmit=\"alert(\'Demo: el formulario enviará correos en la web definitiva.\');return false;\"', s)
