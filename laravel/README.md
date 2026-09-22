@@ -33,27 +33,34 @@ Buscar `TODO` en `config/sitio.php`. Mientras estén a `null` se pintan resaltad
 - `titular_nombre`, `titular_nif`, `titular_domicilio` para aviso legal y privacidad.
 - Confirmar los juzgados listados en cada ciudad.
 
-## Producción
+## Producción (IONOS Web Hosting Plus)
 
-`.env` de producción:
+La web vive en `/home/www/perito/laravel` del hosting (clon de este repo) y el dominio apunta a
+`/perito/laravel/public` desde "Dominios y SSL" del panel de IONOS. PHP 8.3, sin base de datos
+(sesiones y caché en archivo). Composer está en `composer.phar` dentro de esa carpeta.
+
+Actualizar tras hacer push a `main`:
+
+    ssh su353553@access-5021484062.webspace-host.com
+    cd /home/www/perito/laravel && ./deploy-ionos.sh
+
+`.env` de producción (ya creado en el servidor, no está en el repo):
 
     APP_ENV=production
     APP_DEBUG=false
     APP_URL=https://peritoeconomico.es
-    MAIL_MAILER=smtp
-    MAIL_HOST=...        # SMTP del buzón contacto@peritoeconomico.es (DonDominio)
+    SESSION_DRIVER=file
+    CACHE_STORE=file
+    QUEUE_CONNECTION=sync
+    MAIL_MAILER=smtp        # "log" hasta que exista el buzón
+    MAIL_HOST=smtp.ionos.es
     MAIL_PORT=587
     MAIL_USERNAME=contacto@peritoeconomico.es
     MAIL_PASSWORD=...
-    MAIL_ENCRYPTION=tls
     MAIL_FROM_ADDRESS=contacto@peritoeconomico.es
-    GA_ID=               # opcional, Google Analytics 4
+    GA_ID=                  # opcional, Google Analytics 4
 
-Después de desplegar:
-
-    php artisan config:cache && php artisan route:cache && php artisan view:cache
-
-Necesita hosting con PHP 8.2+ y el document root apuntando a `public/`. No usa base de datos (sesiones y caché en archivo).
+Tras cambiar el `.env` hay que volver a ejecutar `php8.3 artisan config:cache`.
 
 ## SEO ya incluido
 
