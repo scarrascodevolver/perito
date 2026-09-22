@@ -38,12 +38,10 @@ return [
             'comunidad' => 'Comunidad Valenciana',
             'color' => '#C4622D',
             'color_soft' => '#F7E6DC',
-            'responsable' => null, // TODO nombre del perito que lleva la sede
-            'responsable_foto' => null, // TODO "aurelio" | "juan-angel" | "rosa"
-            'direccion' => null, // TODO dirección completa con CP
+            'direccion' => "Carrer de Colón, 4, L'Eixample, 46004 Valencia",
             'telefono' => null, // TODO null = usa el central
             'maps_embed' => null, // TODO URL del iframe de Google Maps (Compartir > Insertar un mapa)
-            'cp' => null, // TODO código postal
+            'cp' => '46004',
             'lat' => null, // TODO latitud
             'lng' => null, // TODO longitud
             'juzgados' => [
@@ -72,12 +70,10 @@ return [
             'comunidad' => 'Comunidad de Madrid',
             'color' => '#8E2A2F',
             'color_soft' => '#F3E1E2',
-            'responsable' => null, // TODO nombre del perito que lleva la sede
-            'responsable_foto' => null, // TODO "aurelio" | "juan-angel" | "rosa"
-            'direccion' => null, // TODO dirección completa con CP
+            'direccion' => 'Calle Velázquez, 10, 1º, 28001 Madrid',
             'telefono' => null, // TODO null = usa el central
             'maps_embed' => null, // TODO URL del iframe de Google Maps (Compartir > Insertar un mapa)
-            'cp' => null, // TODO código postal
+            'cp' => '28001',
             'lat' => null, // TODO latitud
             'lng' => null, // TODO longitud
             'juzgados' => [
@@ -107,12 +103,11 @@ return [
             'comunidad' => 'Andalucía',
             'color' => '#1F7A8C',
             'color_soft' => '#DCEEF2',
-            'responsable' => null, // TODO nombre del perito que lleva la sede
-            'responsable_foto' => null, // TODO "aurelio" | "juan-angel" | "rosa"
-            'direccion' => null, // TODO dirección completa con CP
+            'direccion' => 'Calle Chillida, 4, 04740 Roquetas de Mar (Almería)',
             'telefono' => null, // TODO null = usa el central
             'maps_embed' => null, // TODO URL del iframe de Google Maps (Compartir > Insertar un mapa)
-            'cp' => null, // TODO código postal
+            'cp' => '04740',
+            'localidad' => 'Roquetas de Mar', // municipio real de la sede (para el LocalBusiness)
             'lat' => null, // TODO latitud
             'lng' => null, // TODO longitud
             'juzgados' => [

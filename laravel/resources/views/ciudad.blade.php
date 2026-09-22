@@ -16,7 +16,7 @@
         'areaServed' => collect($c['zonas'])->map(fn ($z) => ['@type' => 'City', 'name' => $z])->all(),
         'priceRange' => 'Presupuesto a medida', 'openingHours' => 'Mo-Fr 09:00-19:00'];
     if ($c['direccion'] && $c['cp']) {
-        $ld['address'] = ['@type' => 'PostalAddress', 'streetAddress' => $c['direccion'], 'addressLocality' => $n, 'postalCode' => $c['cp'], 'addressRegion' => $c['provincia'], 'addressCountry' => 'ES'];
+        $ld['address'] = ['@type' => 'PostalAddress', 'streetAddress' => $c['direccion'], 'addressLocality' => $c['localidad'] ?? $n, 'postalCode' => $c['cp'], 'addressRegion' => $c['provincia'], 'addressCountry' => 'ES'];
     }
     if ($c['lat']) {
         $ld['geo'] = ['@type' => 'GeoCoordinates', 'latitude' => $c['lat'], 'longitude' => $c['lng']];
@@ -47,9 +47,6 @@
     <div class="eyebrow">Sede de {{ $n }}</div><h2>Su perito económico en {{ $n }}</h2>
     <p class="lead">{{ $c['contexto'] }}</p>
     <ul class="info-list">
-      <li><b>Responsable</b><div style="display:flex;gap:1rem;align-items:center">
-        @if($c['responsable_foto'])<img src="{{ asset('assets/img/equipo/'.$c['responsable_foto'].'.webp') }}" alt="" width="120" height="120" style="border-radius:12px">@endif
-        <span>{{ todo($c['responsable'], 'Perito responsable') }}</span></div></li>
       <li><b>Dirección</b><span>{{ todo($c['direccion'], 'Dirección de la sede') }}</span></li>
       <li><b>Teléfono</b><span><a href="tel:{{ tel_link($tel) }}">{{ $tel }}</a> · <a href="https://wa.me/{{ $site['whatsapp'] }}" target="_blank" rel="noopener">WhatsApp</a></span></li>
       <li><b>Email</b><span><a href="mailto:{{ $site['email'] }}">{{ $site['email'] }}</a></span></li>
