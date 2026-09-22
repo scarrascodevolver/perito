@@ -40,10 +40,10 @@ return [
             'color_soft' => '#F7E6DC',
             'direccion' => "Carrer de Colón, 4, L'Eixample, 46004 Valencia",
             'telefono' => null, // TODO null = usa el central
-            'maps_embed' => null, // TODO URL del iframe de Google Maps (Compartir > Insertar un mapa)
+            'maps_embed' => 'https://www.google.com/maps?q=Carrer+de+Col%C3%B3n+4%2C+46004+Valencia&z=16&output=embed',
             'cp' => '46004',
-            'lat' => null, // TODO latitud
-            'lng' => null, // TODO longitud
+            'lat' => 39.4670076,
+            'lng' => -0.3743553,
             'juzgados' => [
                 'Ciudad de la Justicia de Valencia (Av. del Profesor López Piñero, 14)',
                 'Juzgados de lo Mercantil de Valencia',
@@ -72,10 +72,10 @@ return [
             'color_soft' => '#F3E1E2',
             'direccion' => 'Calle Velázquez, 10, 1º, 28001 Madrid',
             'telefono' => null, // TODO null = usa el central
-            'maps_embed' => null, // TODO URL del iframe de Google Maps (Compartir > Insertar un mapa)
+            'maps_embed' => 'https://www.google.com/maps?q=Calle+de+Vel%C3%A1zquez+10%2C+28001+Madrid&z=16&output=embed',
             'cp' => '28001',
-            'lat' => null, // TODO latitud
-            'lng' => null, // TODO longitud
+            'lat' => 40.4224760,
+            'lng' => -3.6841342,
             'juzgados' => [
                 'Juzgados de Plaza de Castilla (Madrid)',
                 'Juzgados de lo Mercantil de Madrid (Gran Vía, 52)',
@@ -105,11 +105,11 @@ return [
             'color_soft' => '#DCEEF2',
             'direccion' => 'Calle Chillida, 4, 04740 Roquetas de Mar (Almería)',
             'telefono' => null, // TODO null = usa el central
-            'maps_embed' => null, // TODO URL del iframe de Google Maps (Compartir > Insertar un mapa)
+            'maps_embed' => 'https://www.google.com/maps?q=Calle+Chillida+4%2C+Roquetas+de+Mar%2C+Almer%C3%ADa&z=16&output=embed',
             'cp' => '04740',
             'localidad' => 'Roquetas de Mar', // municipio real de la sede (para el LocalBusiness)
-            'lat' => null, // TODO latitud
-            'lng' => null, // TODO longitud
+            'lat' => 36.8190388,
+            'lng' => -2.5975909,
             'juzgados' => [
                 'Ciudad de la Justicia de Almería (Carretera de Ronda, 120)',
                 'Juzgado de lo Mercantil de Almería',
