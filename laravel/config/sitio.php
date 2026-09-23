@@ -18,7 +18,7 @@ return [
         'telefono' => '+34 711 541 524',
         'telefono_link' => '+34711541524',
         'whatsapp' => '34711541524',
-        'email' => 'contacto@peritoeconomico.es',
+        'email' => 'tuinformepericial@gmail.com', // buzón de Aurelio (decisión 23-sep-2026: no se crea contacto@)
         'horario' => 'Lunes a viernes, 9:00 a 19:00',
         'anios' => '15',
         'informes' => '500+',
