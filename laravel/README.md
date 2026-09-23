@@ -52,12 +52,13 @@ Actualizar tras hacer push a `main`:
     SESSION_DRIVER=file
     CACHE_STORE=file
     QUEUE_CONNECTION=sync
-    MAIL_MAILER=smtp        # "log" hasta que exista el buzón
+    MAIL_MAILER=smtp        # con "log" el correo del formulario NO llega a nadie
     MAIL_HOST=smtp.ionos.es
     MAIL_PORT=587
     MAIL_USERNAME=contacto@peritoeconomico.es
     MAIL_PASSWORD=...
     MAIL_FROM_ADDRESS=contacto@peritoeconomico.es
+    CONTACTO_COPIA=         # opcional, copia oculta de cada consulta (p. ej. el Gmail de Aurelio)
     GA_ID=                  # opcional, Google Analytics 4
 
 Tras cambiar el `.env` hay que volver a ejecutar `php8.3 artisan config:cache`.
