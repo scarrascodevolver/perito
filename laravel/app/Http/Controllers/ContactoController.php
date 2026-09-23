@@ -36,7 +36,11 @@ class ContactoController extends Controller
             'email' => 'Indique un email válido.',
         ]);
 
-        Mail::to(sitio('site.email'))->send(new ConsultaRecibida($datos));
+        $mail = Mail::to(sitio('site.email'));
+        if ($copia = sitio('site.email_copia')) {
+            $mail->bcc($copia);
+        }
+        $mail->send(new ConsultaRecibida($datos));
 
         return redirect()->route('contacto')->with('ok', true);
     }

@@ -23,6 +23,8 @@ return [
         'anios' => '15',
         'informes' => '500+',
         // El formulario se envía por correo al email de arriba (MAIL_* en .env)
+        // y, si se define CONTACTO_COPIA en .env, una copia oculta a esa dirección (p. ej. el Gmail de Aurelio).
+        'email_copia' => env('CONTACTO_COPIA'),
         'ga_id' => env('GA_ID', ''), // Google Analytics 4 (opcional)
         'titular_nombre' => null, // TODO nombre o razón social (aviso legal)
         'titular_nif' => null, // TODO NIF

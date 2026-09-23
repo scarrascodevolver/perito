@@ -63,6 +63,17 @@ class SitioTest extends TestCase
         Mail::assertSent(ConsultaRecibida::class, fn ($m) => $m->hasTo(config('sitio.site.email')));
     }
 
+    public function test_formulario_envia_copia_oculta_si_esta_configurada(): void
+    {
+        config(['sitio.site.email_copia' => 'copia@example.com']);
+        Mail::fake();
+        $this->post('/contacto', [
+            'nombre' => 'Prueba', 'telefono' => '600000000', 'email' => 'p@example.com',
+            'mensaje' => 'Hola', 'privacidad' => '1',
+        ]);
+        Mail::assertSent(ConsultaRecibida::class, fn ($m) => $m->hasBcc('copia@example.com'));
+    }
+
     public function test_formulario_exige_privacidad_y_email_valido(): void
     {
         Mail::fake();
