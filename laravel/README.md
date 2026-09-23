@@ -6,7 +6,7 @@ Web corporativa en **Laravel 12 + Blade**. Sin base de datos para el contenido: 
 
 | Qué | Dónde |
 |---|---|
-| Textos, ciudades, servicios, equipo, teléfono, email | `config/sitio.php` (único archivo que se edita habitualmente) |
+| Textos, ciudades, servicios, equipo, teléfono, email (destinatario del formulario: Gmail de Aurelio) | `config/sitio.php` (único archivo que se edita habitualmente) |
 | Rutas | `routes/web.php` |
 | Controladores | `app/Http/Controllers/SitioController.php`, `ContactoController.php` |
 | Plantilla base (head, SEO, fuentes) | `resources/views/layouts/app.blade.php` |
@@ -52,12 +52,9 @@ Actualizar tras hacer push a `main`:
     SESSION_DRIVER=file
     CACHE_STORE=file
     QUEUE_CONNECTION=sync
-    MAIL_MAILER=smtp        # con "log" el correo del formulario NO llega a nadie
-    MAIL_HOST=smtp.ionos.es
-    MAIL_PORT=587
-    MAIL_USERNAME=contacto@peritoeconomico.es
-    MAIL_PASSWORD=...
-    MAIL_FROM_ADDRESS=contacto@peritoeconomico.es
+    MAIL_MAILER=sendmail    # sin buzón propio: el hosting envía por sendmail (SPF de IONOS lo cubre)
+    MAIL_SENDMAIL_PATH="/usr/sbin/sendmail -t -i"   # el modo -bs por defecto falla en IONOS
+    MAIL_FROM_ADDRESS=web@peritoeconomico.es
     CONTACTO_COPIA=         # opcional, copia oculta de cada consulta (p. ej. el Gmail de Aurelio)
     GA_ID=                  # opcional, Google Analytics 4
 
